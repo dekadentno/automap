@@ -83,7 +83,7 @@ perform_scan() {
         if [ "$SCAN_OPTION" = "udp" ] || [ "$SCAN_OPTION" = "both" ]; then
             OUTPUT_FILE="${OUTPUT_DIR}/${LAST_OCTET}_udp.nmap"
             echo "Starting Nmap scan for UDP ports on $TARGET_IP..."
-            sudo nmap -sU -sC -oN "$OUTPUT_FILE" $TARGET_IP | colorize_output
+            sudo nmap -sU -sS -sC -oN "$OUTPUT_FILE" $TARGET_IP | colorize_output
             echo "Results saved to $OUTPUT_FILE"
         fi
     done
